@@ -1,0 +1,43 @@
+.box
+  margin: 0 auto
+  display: inherit
+  +desktop-large
+    width: $desktop-large - 126px
+  +desktop-small
+    width: $desktop-small - 126px
+  +desktop-smaller
+    width: $desktop-small - 226px
+    padding:
+      left: .75em
+      right: .75em
+  +tablet-landscape
+    width: $tablet - 126px
+    padding:
+      left: .75em
+      right: .75em
+  +tablet-portrait
+    width: $tablet - ($tablet - $mobile)
+  +medium
+    width: $medium-screen - 126px
+  +mobile
+    width: 100%
+    padding: 0 .75em
+  &.is-fluid
+    width: 100%
+    padding: 0 .75em
+  &.is-fullscreen
+    height: 100vh
+  &.is-halfscreen
+    height: 50vh
+    +mobile
+      display: none
+  &.is-content
+    width: 100%
+    overflow-x: hidden
+    overflow-y: scroll
+
+.navbar
+  >.is-fullscreen
+    height: calc(100vh - #{$navbar-height})
+  >.is-halfscreen
+    height: 50vh

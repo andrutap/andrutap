@@ -1,0 +1,51 @@
+.column,
+.row
+  display: flex
+  flex-wrap: wrap
+
+.column
+  flex-direction: column
+
+.row
+  flex-direction: row
+  &.is-reverse
+    flex-direction: row-reverse
+  &.tiles
+    &.bordered
+      .tile
+        border: thin solid
+        margin: 0.075rem
+
+.tile
+  flex: 1 1 0
+  display: block
+  padding: 0.75rem
+  @for $i from 1 through 12
+    &.is-#{$i}
+      flex: none
+      width: ($i / 12) * 100%
+    &.offset-is-#{$i}
+      margin-left: ($i / 12) * 100%
+  +tablet-landscape
+    flex: 1 0 25%
+    @for $i from 1 through 12
+      &.is-#{$i}
+        @if $i >= 6
+          width: ($i / 12) * 100%
+        @else
+          flex: 1 1 0
+          width: auto
+  +tablet-portrait
+    flex: 1 0 50%
+    @for $i from 1 through 12
+      &.is-#{$i}
+        @if $i > 6
+          flex: 1 0 100%
+        @else
+          flex: 1 0 50%
+  +mobile
+    flex: 1 0 100%
+    @for $i from 1 through 12
+      &.is-#{$i}
+        flex: none
+        width: 100%

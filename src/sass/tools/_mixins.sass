@@ -1,0 +1,47 @@
+//----------------------------//
+//      MEDIA QUERIES        //
+//--------------------------//
+
+=desktop-large
+  @media screen and (min-width: $desktop-large)
+    @content
+
+=desktop-small
+  @media screen and (min-width: $desktop-small) and (max-width: $desktop-large - 1)
+    @content
+
+=desktop-smaller
+  @media screen and (min-width: $tablet) and (max-width: $desktop-small - 1)
+    @content
+
+=tablet-landscape
+  @media screen and (max-width: $tablet) and (orientation: landscape)
+    @content
+
+=tablet-portrait
+  @media screen and (min-width: $mobile + 1) and (max-width: $tablet) and (orientation: portrait)
+    @content
+
+=handheld
+  @media screen and (max-width: $tablet)
+    @content
+
+=medium
+  @media screen and (max-width: $medium-screen)
+    @content
+
+=mobile
+  @media screen and (max-width: $mobile)
+    @content
+
+=shadows($k, $j)
+  $shadowList: ()
+  $n-groups: $k
+  $group-base-angle: 360deg/$n-groups
+  $group-r: 6rem
+  @for $i from 0 to $n-groups
+    $curr-angle: $i * $group-base-angle - 90deg
+    $xg: $group-r * cos($curr-angle)
+    $yg: $group-r * sin($curr-angle)
+    $shadowList: $shadowList, $xg $yg 0 ($j * random($k) * 0.25) hsl($i * $group-base-angle + random(100), 100%, 85%)
+  box-shadow: $shadowList

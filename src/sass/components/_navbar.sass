@@ -1,0 +1,33 @@
+.navbar
+  height: $navbar-height
+  display: flex
+  justify-content: flex-end
+  &.is-active
+    > .is-menu
+      opacity: 1
+      transition: opacity .3s ease
+      .item
+        height: 37.8px
+        transition: height .3s ease
+  .is-navbar-toggle
+    width: 40px
+    height: 40px
+    border-radius: 0
+    transform: rotate(45deg)
+    float: right
+    align-self: center
+  &.is-menu
+    display: block
+    position: absolute
+    top: $navbar-height
+    font-weight: lighter
+    color: white
+    font-size: 1rem
+    opacity: 0
+    transition: opacity .3s ease
+    .item
+      display: block
+      padding: .75rem 2rem
+      text-align: right
+      height: 0
+      transition: height .3s ease
