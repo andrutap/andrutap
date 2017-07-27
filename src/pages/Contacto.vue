@@ -15,6 +15,9 @@
       return {
         sender: ''
       }
+    },
+    metaInfo: {
+      title: 'andrutap | contacto'
     }
   }
 </script>
