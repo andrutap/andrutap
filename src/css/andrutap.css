@@ -19,7 +19,8 @@ img {
   border-style: none; }
 
 button,
-[type='button'] {
+[type='button'],
+.button {
   -ms-appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -27,7 +28,16 @@ button,
   margin: 0;
   padding: 0;
   border: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 2em; }
+
+.button.is-primary {
+  background: rgba(129, 169, 96, 0.125);
+  border-color: #81a960;
+  font-weight: lighter;
+  color: white; }
+  .button.is-primary:focus, .button.is-primary:hover {
+    box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
 
 input,
 select,
@@ -39,6 +49,9 @@ textarea {
   select:focus,
   textarea:focus {
     outline: none; }
+
+textarea {
+  resize: none; }
 
 .column,
 .row {
@@ -274,11 +287,9 @@ textarea {
   justify-content: flex-start;
   flex-direction: row-reverse; }
   .navbar.is-active > .is-menu {
-    opacity: 1;
-    transition: opacity 0.3s ease; }
+    opacity: 1; }
     .navbar.is-active > .is-menu .item {
-      height: 37.8px;
-      transition: height 0.3s ease; }
+      height: 37.8px; }
   .navbar .is-navbar-toggle {
     width: 40px;
     height: 40px;
@@ -291,52 +302,65 @@ textarea {
     position: relative;
     top: 5rem;
     font-weight: lighter;
-    color: white;
     font-size: 1rem;
     opacity: 0;
-    right: -2rem;
-    transition: opacity 0.3s ease; }
+    right: -2rem; }
     .navbar.is-menu .item {
       display: block;
       padding: 0.75rem 2rem;
       text-align: right;
-      height: 0;
-      transition: height 0.3s ease; }
+      height: 0; }
 
 .panel {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.125);
+  border: thin solid white;
   border-radius: 0.325em;
   padding: 0.75em; }
 
-.form .hidden-legend {
-  position: relative;
-  z-index: -1;
-  top: 20px;
-  transition: all 0.1s ease-out; }
-  .form .hidden-legend.is-active {
-    z-index: -1;
-    position: relative;
-    top: 0px;
-    transition: all 0.1s ease-out; }
+.form .group {
+  margin-bottom: 2rem; }
+  .form .group:last-of-type {
+    margin-bottom: 0; }
+  .form .group legend,
+  .form .group label,
+  .form .group input,
+  .form .group select,
+  .form .group textarea,
+  .form .group button,
+  .form .group .button {
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+  .form .group input,
+  .form .group select,
+  .form .group textarea {
+    border: 0;
+    border-bottom: 0.0125rem solid #22313F;
+    background: transparent; }
+  .form .group button,
+  .form .group .button {
+    float: right; }
 
 .ripple {
   padding: 0.75rem;
   width: 8rem;
   display: block;
-  border: thin solid rgba(255, 255, 255, 0.425);
-  border-radius: 0.5rem;
+  border-width: thin;
+  border-style: solid;
   background-color: rgba(255, 255, 255, 0.125);
-  color: white;
   cursor: pointer;
   background-position: 0px 20px;
   overflow: hidden;
   transition: all 0.2s ease;
   z-index: 0;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .ripple:focus, .ripple:hover {
-    background-color: rgba(255, 255, 255, 0.425);
-    background-size: 60px 20px;
     outline: none; }
+  .ripple.is-white {
+    background-color: rgba(255, 255, 255, 0.125);
+    border-color: rgba(255, 255, 255, 0.425); }
+    .ripple.is-white:focus, .ripple.is-white:hover {
+      background-color: rgba(255, 255, 255, 0.425); }
 
 .rippling {
   display: block;
@@ -375,13 +399,12 @@ textarea {
   -webkit-user-select: none;
   user-select: none; }
 
-@keyframes fun {
-  0% {
-    box-shadow: 0rem -6rem 0 0.0025rem #ffe2b3, 5.19615rem -3rem 0 0.0125rem #beffb3, 5.19615rem 3rem 0 0.0025rem #b3d7ff, 0rem 6rem 0 0.01rem #b3fbff, -5.19615rem 3rem 0 0.005rem #ebb3ff, -5.19615rem -3rem 0 0.005rem #ffb3cd; }
-  55% {
-    box-shadow: 0rem -6rem 0 0.05rem #ffffb3, 5.19615rem -3rem 0 0.0125rem #b5ffb3, 5.19615rem 3rem 0 0.025rem #b3ffe4, 0rem 6rem 0 0.05rem #b3c6ff, -5.19615rem 3rem 0 0.075rem #ffb3cd, -5.19615rem -3rem 0 0.0125rem #ffb3da; }
-  100% {
-    box-shadow: 0rem -6rem 0 0.0025rem #ffcfb3, 5.19615rem -3rem 0 0.01rem #b3ffcd, 5.19615rem 3rem 0 0.015rem #b3e8ff, 0rem 6rem 0 0.01rem #b3d2ff, -5.19615rem 3rem 0 0.01rem #ffb3fc, -5.19615rem -3rem 0 0.0125rem #ffb3fc; } }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s; }
+
+.fade-enter, .fade-leave {
+  opacity: 0; }
+
 .canvas {
   z-index: -1;
   position: absolute;
@@ -400,6 +423,8 @@ body {
   font-weight: lighter; }
 .text.is-huge {
   font-size: 56px; }
+.text.is-big {
+  font-size: 28px; }
 
 .elevation._default {
   box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }

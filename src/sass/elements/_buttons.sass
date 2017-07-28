@@ -1,5 +1,6 @@
 button,
-[type='button']
+[type='button'],
+.button
   -ms-appearance: none
   -moz-appearance: none
   -webkit-appearance: none
@@ -8,3 +9,14 @@ button,
   padding: 0
   border: 0
   cursor: pointer
+  border-radius: 2em
+
+.button
+  @each $key, $color in $list
+    &.#{$key}
+      background: rgba($color, $alpha)
+      border-color: $color
+      font-weight: lighter
+      color: white
+      +hf
+        box-shadow: $shadow-default

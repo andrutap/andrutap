@@ -1,11 +1,13 @@
 <template>
   <div class="box">
     <nav class="navbar" v-bind:class="{ 'is-active': isToggled }">
-      <ripple class="is-navbar-toggle" @click.native="toggle"></ripple>
-      <div class="navbar is-menu">
-        <span class="item" v-for="link in links">
-          <router-link :to="link.path">{{ link.name }}</router-link>    
-        </span>
+      <ripple class="is-white is-navbar-toggle" @click.native="toggle"></ripple>
+      <div class="navbar is-menu text is-white">
+        <template v-if="isToggled">
+          <span class="item" v-for="link in links">
+            <router-link :to="link.path">{{ link.name }}</router-link>
+          </span>
+        </template>
       </div>
     </nav>
   </div>
@@ -32,6 +34,11 @@ export default {
   },
   components: {
     ripple
+  },
+  watch: {
+    '$route' () {
+      this.isToggled = false
+    }
   }
 }
 </script>

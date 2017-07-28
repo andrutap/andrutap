@@ -2,7 +2,9 @@
   <main id="app">
     <navbar></navbar>
     <transition>
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </transition>
 
   </main>

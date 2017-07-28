@@ -24,8 +24,8 @@
           rp.style.width = d + 'px'
           rp.style.height = d + 'px'
         }
-        var x = event.pageX - holder.offsetLeft - parseInt(rp.style.width) / 2
-        var y = event.pageY - holder.offsetTop - parseInt(rp.style.height) / 2
+        var x = event.clientX - rect.left - (parseInt(rp.style.width) / 2)
+        var y = event.clientY - rect.top - (parseInt(rp.style.height) / 2)
 
         rp.style.left = x + 'px'
         rp.style.top = y + 'px'

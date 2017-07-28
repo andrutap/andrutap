@@ -45,3 +45,8 @@
     $yg: $group-r * sin($curr-angle)
     $shadowList: $shadowList, $xg $yg 0 ($j * random($k) * 0.25) hsl($i * $group-base-angle + random(100), 100%, 85%)
   box-shadow: $shadowList
+
+=hf
+  &:focus,
+  &:hover
+    @content

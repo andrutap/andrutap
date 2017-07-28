@@ -1,25 +1,35 @@
 $black-alpha: hsla(0, 100%, 100%, 0)
 $black-alpha-2: hsla(0, 100%, 100%, 0.225)
 
+
+$white: hsla(0, 100%, 100%, $alpha)
+$white-border: hsla(0, 100%, 100%, $alpha + .3)
+
 .ripple
   padding: .75rem
   width: 8rem
   display: block
-  border: thin solid hsla(0, 100%, 100%, .425)
-  border-radius: .5rem
+  border:
+    width: thin
+    style: solid
   background-color: hsla(0, 100%, 100%, .125)
-  color: white
   cursor: pointer
   background-position: 0px 20px
   overflow: hidden
   transition: all 0.2s ease
   z-index: 0
   text-align: center
+  position: relative
   &:focus,
   &:hover
-    background-color: hsla(0, 100%, 100%, .425)
-    background-size: 60px 20px
     outline: none
+  &.is-white
+    background-color: $white
+    border-color: $white-border
+    +hf
+      background-color: $white-border
+
+
 
 .rippling
   display: block
