@@ -29,7 +29,6 @@
 
 
 <script>
-  import ripple from '@/components/ripple'
   export default {
     data () {
       return {
@@ -44,25 +43,22 @@
     metaInfo: {
       title: 'andrutap | contacto'
     },
-    components: {
-      ripple
-    },
     methods: {
-      nextQ: function () {
+      nextQ () {
         this.showForm = true
       },
-      checkHasSender: function () {
+      checkHasSender () {
         if (this.sender.length > 0) {
           this.hasSender = true
         } else {
           this.hasSender = false
         }
       },
-      splitMessage: function () {
+      splitMessage () {
         this.writing = true
-        this.array = this.message.split(' ')
+        this.array = this.message.unshift.split(' ')
       },
-      splitArray: function () {
+      splitArray () {
         this.writing = false
         this.array.splice(0, 1)
       }

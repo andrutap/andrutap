@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import ripple from './ripple'
 export default {
   data () {
     return {
@@ -28,12 +27,9 @@ export default {
     }
   },
   methods: {
-    toggle: function () {
+    toggle () {
       this.isToggled = !this.isToggled
     }
-  },
-  components: {
-    ripple
   },
   watch: {
     '$route' () {

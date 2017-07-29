@@ -6,16 +6,11 @@
         <router-view></router-view>
       </keep-alive>
     </transition>
-
   </main>
 </template>
 
 <script>
-  import navbar from '@/components/navbar'
   export default {
-    components: {
-      navbar
-    },
     name: 'app',
     metaInfo: {
       meta: [

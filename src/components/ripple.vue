@@ -6,9 +6,8 @@
 
 <script>
   export default {
-    name: 'ripple',
     methods: {
-      createRipple: function (event) {
+      createRipple (event) {
         var holder = event.target
         var ripple = document.createElement('span')
         var d
