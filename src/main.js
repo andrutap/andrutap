@@ -12,6 +12,8 @@ Vue.config.productionTip = false
 Vue.component('navbar', navbar)
 Vue.component('ripple', ripple)
 
+export const senderBus = new Vue()
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

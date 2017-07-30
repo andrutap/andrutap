@@ -1,14 +1,16 @@
 <template>
-  <div class="box">
+  <div class="box is-fluid">
     <nav class="navbar" v-bind:class="{ 'is-active': isToggled }">
-      <ripple class="is-white is-navbar-toggle" @click.native="toggle"></ripple>
-      <div class="navbar is-menu text is-white">
+      <ripple class="is-ghost is-navbar-toggle elevation _none" @click.native="toggle"></ripple>
+      <transition-group name="fade">
         <template v-if="isToggled">
-          <span class="item" v-for="link in links">
-            <router-link :to="link.path">{{ link.name }}</router-link>
-          </span>
-        </template>
-      </div>
+          <div class="navbar-holder is-menu text is-white" :key="'div'">
+            <span class="item" v-for="link in links" :key="'link'">
+              <router-link :to="link.path">{{ link.name }}</router-link>
+            </span>
+          </div>
+      </template>
+      </transition-group>
     </nav>
   </div>
 </template>

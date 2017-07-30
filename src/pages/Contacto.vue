@@ -5,9 +5,7 @@
         <div class="group" v-if="!showForm">
           <legend class="text is-big">Para comenzar, ¿cuál es tu nombre?</legend>
           <input type="text" name="" value="" v-model="sender" @input="checkHasSender" required>
-          <transition name="fade">
-            <ripple class="button is-primary" v-if="hasSender" @click.native="nextQ">OK</ripple>
-          </transition>
+          <ripple class="button is-primary" v-if="hasSender" @click.native="nextQ">OK</ripple>
         </div>
         <template v-else>
           <div class="group" >

@@ -19,8 +19,10 @@ $alpha: .125
 
 
 $green: hsl(93, 30%, 52%)
+$white: hsl(0, 100%, 100%)
+$ghostWhite: rgba($white, $alpha)
+$white-border: rgba($white, $alpha + .3)
 
-
-$list: (is-primary: $green)
+$list: (is-primary: $green, is-ghost: $white)
 
 $shadow-default: 0 .12rem .12rem 0 hsla(0, 0%, 0%, .125)

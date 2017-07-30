@@ -38,6 +38,19 @@ button,
   color: white; }
   .button.is-primary:focus, .button.is-primary:hover {
     box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
+.button.is-ghost {
+  background: rgba(255, 255, 255, 0.125);
+  border-color: white;
+  font-weight: lighter;
+  color: white; }
+  .button.is-ghost:focus, .button.is-ghost:hover {
+    box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
+
+.tile button,
+.tile [type='button'],
+.tile .button {
+  left: 50%;
+  transform: translateX(-50%); }
 
 input,
 select,
@@ -285,31 +298,41 @@ textarea {
   height: 5rem;
   display: flex;
   justify-content: flex-start;
-  flex-direction: row-reverse; }
-  .navbar.is-active > .is-menu {
-    opacity: 1; }
-    .navbar.is-active > .is-menu .item {
-      height: 37.8px; }
+  flex-direction: row-reverse;
+  z-index: 10;
+  align-items: center; }
+  .navbar.is-active > .is-navbar-toggle {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease; }
   .navbar .is-navbar-toggle {
     width: 40px;
     height: 40px;
     border-radius: 0;
     transform: rotate(45deg);
     float: right;
-    align-self: center; }
-  .navbar.is-menu {
+    align-self: center;
+    transition: transform 0.3s ease; }
+    .navbar .is-navbar-toggle:focus, .navbar .is-navbar-toggle:hover {
+      background-color: rgba(255, 255, 255, 0.125); }
+  .navbar-holder.is-menu {
     display: block;
-    position: relative;
-    top: 5rem;
     font-weight: lighter;
     font-size: 1rem;
-    opacity: 0;
-    right: -2rem; }
-    .navbar.is-menu .item {
-      display: block;
-      padding: 0.75rem 2rem;
-      text-align: right;
-      height: 0; }
+    background-color: rgba(255, 255, 255, 0.125);
+    border: thin solid white;
+    border-right: 0;
+    border-radius: 0.325em;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px; }
+    .navbar-holder.is-menu .item a {
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      text-align: right; }
+      .navbar-holder.is-menu .item a:focus, .navbar-holder.is-menu .item a:hover {
+        background-color: rgba(255, 255, 255, 0.125); }
+      @media screen and (max-width: 768px) {
+        .navbar-holder.is-menu .item a {
+          padding: 0.5rem 0.5rem; } }
 
 .panel {
   background-color: rgba(255, 255, 255, 0.125);
@@ -356,11 +379,20 @@ textarea {
   position: relative; }
   .ripple:focus, .ripple:hover {
     outline: none; }
-  .ripple.is-white {
-    background-color: rgba(255, 255, 255, 0.125);
-    border-color: rgba(255, 255, 255, 0.425); }
-    .ripple.is-white:focus, .ripple.is-white:hover {
-      background-color: rgba(255, 255, 255, 0.425); }
+  .ripple.is-primary {
+    background: rgba(129, 169, 96, 0.125);
+    border-color: #81a960;
+    font-weight: lighter;
+    color: white; }
+    .ripple.is-primary:focus, .ripple.is-primary:hover {
+      box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
+  .ripple.is-ghost {
+    background: rgba(255, 255, 255, 0.125);
+    border-color: white;
+    font-weight: lighter;
+    color: white; }
+    .ripple.is-ghost:focus, .ripple.is-ghost:hover {
+      box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
 
 .rippling {
   display: block;
@@ -400,10 +432,10 @@ textarea {
   user-select: none; }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s; }
-
-.fade-enter, .fade-leave {
-  opacity: 0; }
+  transition: all 0.3s; }
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: translateX(20px); }
 
 .canvas {
   z-index: -1;
@@ -428,5 +460,26 @@ body {
 
 .elevation._default {
   box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
+.elevation._none {
+  box-shadow: none !important; }
+
+.break.is-1 {
+  display: block;
+  height: 1rem; }
+.break.is-2 {
+  display: block;
+  height: 2rem; }
+.break.is-3 {
+  display: block;
+  height: 3rem; }
+.break.is-4 {
+  display: block;
+  height: 4rem; }
+.break.is-5 {
+  display: block;
+  height: 5rem; }
+.break.is-6 {
+  display: block;
+  height: 6rem; }
 
 /*# sourceMappingURL=andrutap.css.map */

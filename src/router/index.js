@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/Home'
-import Contacto from '@/pages/Contacto'
+import Home from '../pages/Home'
+import About from '../pages/About'
+import Contacto from '../pages/Contacto'
 import Meta from 'vue-meta'
 
 Vue.use(Router)
@@ -19,6 +20,11 @@ export default new Router({
       path: '/home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/about',
+      name: 'Sobre mí',
+      component: About
     },
     {
       path: '/contacto',

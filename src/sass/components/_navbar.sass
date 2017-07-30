@@ -3,11 +3,12 @@
   display: flex
   justify-content: flex-start
   flex-direction: row-reverse
+  z-index: 10
+  align-items: center
   &.is-active
-    > .is-menu
-      opacity: 1
-      .item
-        height: 37.8px
+    > .is-navbar-toggle
+      transform: rotate(0deg)
+      transition: transform .3s ease
   .is-navbar-toggle
     width: 40px
     height: 40px
@@ -15,16 +16,27 @@
     transform: rotate(45deg)
     float: right
     align-self: center
-  &.is-menu
-    display: block
-    position: relative
-    top: $navbar-height
-    font-weight: lighter
-    font-size: 1rem
-    opacity: 0
-    right: -2rem
-    .item
+    transition: transform .3s ease
+    +hf
+      background-color: $ghostWhite
+  &-holder
+    &.is-menu
       display: block
-      padding: .75rem 2rem
-      text-align: right
-      height: 0
+      font-weight: lighter
+      font-size: 1rem
+      background-color: $ghostWhite
+      border: thin solid $white
+      border-right: 0
+      border-radius: $border-radius
+      border:
+        top-right-radius: 0px
+        bottom-right-radius: 0px
+      .item
+        a
+          display: inline-block
+          padding: .5rem 2rem
+          text-align: right
+          +hf
+            background-color: $ghostWhite
+          +mobile
+            padding: .5rem .5rem

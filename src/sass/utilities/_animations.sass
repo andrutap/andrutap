@@ -1,5 +1,8 @@
-.fade-enter-active, .fade-leave-active
-  transition: opacity .5s
-
-.fade-enter, .fade-leave
-  opacity: 0
+.fade
+  &-enter-active,
+  &-leave-active
+    transition: all .3s
+  &-enter,
+  &-leave-to
+    opacity: 0
+    transform: translateX(20px)

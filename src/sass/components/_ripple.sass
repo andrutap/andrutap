@@ -1,10 +1,6 @@
 $black-alpha: hsla(0, 100%, 100%, 0)
 $black-alpha-2: hsla(0, 100%, 100%, 0.225)
 
-
-$white: hsla(0, 100%, 100%, $alpha)
-$white-border: hsla(0, 100%, 100%, $alpha + .3)
-
 .ripple
   padding: .75rem
   width: 8rem
@@ -23,11 +19,14 @@ $white-border: hsla(0, 100%, 100%, $alpha + .3)
   &:focus,
   &:hover
     outline: none
-  &.is-white
-    background-color: $white
-    border-color: $white-border
-    +hf
-      background-color: $white-border
+  @each $key, $color in $list
+    &.#{$key}
+      background: rgba($color, $alpha)
+      border-color: $color
+      font-weight: lighter
+      color: white
+      +hf
+        box-shadow: $shadow-default
 
 
 
