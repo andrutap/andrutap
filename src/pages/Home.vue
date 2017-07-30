@@ -2,13 +2,13 @@
   <div class="row">
     <div class="tile is-fullscreen">
       <div class="grid element is-centered _relative">
-        <router-link v-for="link in links" :key="link" :to="link.path" tag="span" class="text is-big is-regular">{{ link.name }}</router-link>
+        <router-link v-for="link in links" :key="'link.name'" :to="link.path" tag="span" class="text is-big is-regular">{{ link.name }}</router-link>
       </div>
     </div>
     <div class="tile">
       <h1 class="text is-huge">Hola<span class="text is-yellow">.</span></h1>
       <div class="row text is-center is-regular" :class="{ 'is-reverse': isReversed }">
-        <div class="tile" v-for="item in whatIDo" :key="h3">
+        <div class="tile" v-for="item in whatIDo" :key="'item'">
           <h3>{{ item }}</h3>
         </div>
       </div>

@@ -21,12 +21,7 @@
       display: block
       font-weight: lighter
       font-size: 1rem
-      background-color: $yellow
-      border-right: 0
-      border-radius: $border-radius
-      border:
-        top-right-radius: 0px
-        bottom-right-radius: 0px
+      background-color: $red
       .item
         a
           display: inline-block
@@ -36,3 +31,10 @@
             background-color: $ghostWhite
           +mobile
             padding: .5rem .5rem
+
+.route
+  &.is-active
+    background: $red
+    text-transform: uppercase
+    padding: .82rem
+    border-left: .5px solid $white

@@ -24,7 +24,7 @@ export default new Router({
     },
     {
       path: '/about',
-      name: 'Sobre mí',
+      name: 'Andrutap',
       component: About
     },
     {

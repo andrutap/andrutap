@@ -2,9 +2,10 @@
   <div class="box">
     <nav class="navbar" :class="{ 'is-active': isToggled }">
       <ripple class="is-revealer is-navbar-toggle elevation _none" @click.native="toggle"></ripple>
+      <span class="route is-active" v-if="!isToggled">{{ routeName }}</span>
       <transition-group name="navbar-fade">
         <template v-if="isToggled">
-          <div class="navbar-holder is-menu text is-white" :key="'div'">
+          <div class="navbar-holder is-menu" :key="'div'">
             <span class="item" v-for="link in links" :key="'link'">
               <router-link :to="link.path">{{ link.name }}</router-link>
             </span>
@@ -25,7 +26,8 @@ export default {
         { name: 'Lab', path: '/lab' },
         { name: 'Contacto', path: '/contacto' }
       ],
-      isToggled: false
+      isToggled: false,
+      routeName: this.$route.name
     }
   },
   methods: {
@@ -36,6 +38,7 @@ export default {
   watch: {
     '$route' () {
       this.isToggled = false
+      this.routeName = this.$route.name
     }
   }
 }

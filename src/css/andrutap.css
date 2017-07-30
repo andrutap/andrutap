@@ -373,11 +373,7 @@ textarea {
     display: block;
     font-weight: lighter;
     font-size: 1rem;
-    background-color: #f4ca25;
-    border-right: 0;
-    border-radius: 0.325em;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px; }
+    background-color: #ff0f3b; }
     .navbar-holder.is-menu .item a {
       display: inline-block;
       padding: 0.5rem 2rem;
@@ -387,6 +383,12 @@ textarea {
       @media screen and (max-width: 768px) {
         .navbar-holder.is-menu .item a {
           padding: 0.5rem 0.5rem; } }
+
+.route.is-active {
+  background: #ff0f3b;
+  text-transform: uppercase;
+  padding: 0.82rem;
+  border-left: 0.5px solid white; }
 
 .panel {
   background-color: rgba(255, 255, 255, 0.125);
