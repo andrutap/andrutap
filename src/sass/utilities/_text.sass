@@ -1,9 +1,8 @@
 .text
   //Colors
-  &.is-white
-    color: white
-  &.is-yellow
-    color: $yellow
+  @each $name, $color in $colorList
+    &.is-#{$name}
+      color: $color
   //Weights
   &.is-lighter
     font-weight: 200

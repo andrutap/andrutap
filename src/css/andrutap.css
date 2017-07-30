@@ -516,10 +516,20 @@ textarea {
   width: 100vw;
   height: 100vh; }
 
-.text.is-white {
-  color: white; }
+.text.is-red {
+  color: #ff0f3b; }
 .text.is-yellow {
   color: #f4ca25; }
+.text.is-blue {
+  color: #0063c7; }
+.text.is-green {
+  color: #81a960; }
+.text.is-orange {
+  color: #ff9705; }
+.text.is-white {
+  color: white; }
+.text.is-black {
+  color: black; }
 .text.is-lighter {
   font-weight: 200; }
 .text.is-regular {
