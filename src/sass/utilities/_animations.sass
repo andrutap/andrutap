@@ -1,8 +1,22 @@
-.fade
+.navbar-fade
   &-enter-active,
   &-leave-active
-    transition: all .3s
+    transition: all .3s ease
   &-enter,
   &-leave-to
     opacity: 0
     transform: translateX(20px)
+
+.fade
+  &-enter-active,
+  &-leave-active
+    transition: all .3s ease
+  &-enter,
+  &-leave-to
+    opacity: 0
+
+.has-transition
+  transition: all 1s ease
+
+.flip-move
+  transition: transform 1s

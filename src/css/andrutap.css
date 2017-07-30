@@ -7,9 +7,10 @@
 body,
 html {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
-  line-height: 1.2; }
+  line-height: 1.2;
+  height: 100vh; }
 
 a {
   color: inherit;
@@ -32,18 +33,25 @@ button,
   border-radius: 2em; }
 
 .button.is-primary {
-  background: rgba(129, 169, 96, 0.125);
+  background: #81a960;
   border-color: #81a960;
   font-weight: lighter;
   color: white; }
   .button.is-primary:focus, .button.is-primary:hover {
     box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
 .button.is-ghost {
-  background: rgba(255, 255, 255, 0.125);
+  background: white;
   border-color: white;
   font-weight: lighter;
   color: white; }
   .button.is-ghost:focus, .button.is-ghost:hover {
+    box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
+.button.is-revealer {
+  background: #ff0f3b;
+  border-color: #ff0f3b;
+  font-weight: lighter;
+  color: white; }
+  .button.is-revealer:focus, .button.is-revealer:hover {
     box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
 
 .tile button,
@@ -65,6 +73,18 @@ textarea {
 
 textarea {
   resize: none; }
+
+.horizontal-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; }
+  .horizontal-list li {
+    display: inline-block;
+    margin: 1rem auto;
+    flex: 1 1 33%; }
+    .horizontal-list li .ripple {
+      margin: 0 auto; }
 
 .column,
 .row {
@@ -244,6 +264,8 @@ textarea {
       .tile.is-12 {
         flex: none;
         width: 100%; } }
+  .tile.is-fullscreen {
+    height: calc(100vh - 1.5rem); }
 
 .box {
   margin: 0 auto;
@@ -294,32 +316,64 @@ textarea {
 .navbar > .is-halfscreen {
   height: 50vh; }
 
+.grid {
+  display: grid !important;
+  height: 50vh;
+  width: 30vw;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr); }
+  .grid span {
+    width: auto;
+    height: auto;
+    background-color: white;
+    cursor: pointer;
+    z-index: 0;
+    transition: all 0.1s ease-out;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg); }
+    .grid span:nth-child(1) {
+      grid-row: 8/span 1;
+      grid-column: 2/span 1; }
+      .grid span:nth-child(1):focus, .grid span:nth-child(1):hover {
+        background-color: #ff0f3b; }
+    .grid span:nth-child(2) {
+      grid-row: 8/span 1;
+      grid-column: 4/span 1; }
+      .grid span:nth-child(2):focus, .grid span:nth-child(2):hover {
+        background-color: #f4ca25; }
+    .grid span:nth-child(3) {
+      grid-row: 8/span 1;
+      grid-column: 6/span 1; }
+      .grid span:nth-child(3):focus, .grid span:nth-child(3):hover {
+        background-color: #0063c7; }
+    .grid span:nth-child(4) {
+      grid-row: 8/span 1;
+      grid-column: 8/span 1; }
+      .grid span:nth-child(4):focus, .grid span:nth-child(4):hover {
+        background-color: #81a960; }
+
 .navbar {
   height: 5rem;
   display: flex;
   justify-content: flex-start;
-  flex-direction: row-reverse;
   z-index: 10;
   align-items: center; }
   .navbar.is-active > .is-navbar-toggle {
-    transform: rotate(0deg);
+    transform: rotate(45deg);
     transition: transform 0.3s ease; }
   .navbar .is-navbar-toggle {
     width: 40px;
     height: 40px;
     border-radius: 0;
-    transform: rotate(45deg);
+    transform: rotate(0deg);
     float: right;
     align-self: center;
     transition: transform 0.3s ease; }
-    .navbar .is-navbar-toggle:focus, .navbar .is-navbar-toggle:hover {
-      background-color: rgba(255, 255, 255, 0.125); }
   .navbar-holder.is-menu {
     display: block;
     font-weight: lighter;
     font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.125);
-    border: thin solid white;
+    background-color: #f4ca25;
     border-right: 0;
     border-radius: 0.325em;
     border-top-right-radius: 0px;
@@ -380,18 +434,25 @@ textarea {
   .ripple:focus, .ripple:hover {
     outline: none; }
   .ripple.is-primary {
-    background: rgba(129, 169, 96, 0.125);
+    background: #81a960;
     border-color: #81a960;
     font-weight: lighter;
     color: white; }
     .ripple.is-primary:focus, .ripple.is-primary:hover {
       box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
   .ripple.is-ghost {
-    background: rgba(255, 255, 255, 0.125);
+    background: white;
     border-color: white;
     font-weight: lighter;
     color: white; }
     .ripple.is-ghost:focus, .ripple.is-ghost:hover {
+      box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
+  .ripple.is-revealer {
+    background: #ff0f3b;
+    border-color: #ff0f3b;
+    font-weight: lighter;
+    color: white; }
+    .ripple.is-revealer:focus, .ripple.is-revealer:hover {
       box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }
 
 .rippling {
@@ -422,8 +483,7 @@ textarea {
   .element.is-centered._absolute {
     position: absolute; }
   .element.is-centered._relative {
-    position: relative;
-    text-align: center; }
+    position: relative; }
 
 [data-toggle='dropdown'] {
   -ms-user-select: none;
@@ -431,11 +491,22 @@ textarea {
   -webkit-user-select: none;
   user-select: none; }
 
-.fade-enter-active, .fade-leave-active {
-  transition: all 0.3s; }
-.fade-enter, .fade-leave-to {
+.navbar-fade-enter-active, .navbar-fade-leave-active {
+  transition: all 0.3s ease; }
+.navbar-fade-enter, .navbar-fade-leave-to {
   opacity: 0;
   transform: translateX(20px); }
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 0.3s ease; }
+.fade-enter, .fade-leave-to {
+  opacity: 0; }
+
+.has-transition {
+  transition: all 1s ease; }
+
+.flip-move {
+  transition: transform 1s; }
 
 .canvas {
   z-index: -1;
@@ -445,18 +516,22 @@ textarea {
   width: 100vw;
   height: 100vh; }
 
-body {
-  height: 100vh;
-  background: linear-gradient(to bottom, #a5bf90 0%, #feebac 100%) no-repeat; }
-
 .text.is-white {
   color: white; }
+.text.is-yellow {
+  color: #f4ca25; }
 .text.is-lighter {
-  font-weight: lighter; }
+  font-weight: 200; }
+.text.is-regular {
+  font-weight: 400; }
+.text.is-bold {
+  font-weight: 800; }
 .text.is-huge {
-  font-size: 56px; }
+  font-size: 112px; }
 .text.is-big {
-  font-size: 28px; }
+  font-size: 56px; }
+.text.is-center {
+  text-align: center; }
 
 .elevation._default {
   box-shadow: 0 0.12rem 0.12rem 0 rgba(0, 0, 0, 0.125); }

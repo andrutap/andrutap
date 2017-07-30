@@ -4,7 +4,7 @@
       <form class="form text is-lighter">
         <div class="group" v-if="!showForm">
           <legend class="text is-big">Para comenzar, ¿cuál es tu nombre?</legend>
-          <input type="text" name="" value="" v-model="sender" @input="checkHasSender" required>
+          <input type="text" name="senderName" value="" v-model="sender" @input="checkHasSender" required>
           <ripple class="button is-primary" v-if="hasSender" @click.native="nextQ">OK</ripple>
         </div>
         <template v-else>
@@ -13,12 +13,13 @@
           </div>
           <div class="group">
             <label for="email">Por favor, ingresa tu email</label>
-            <input type="email" name="" value="" required>
+            <input type="email" name="email" value="" required id="email">
           </div>
           <div class="group">
             <label for="message">Ingresa tu mensaje</label>
             <textarea name="message" rows="8" cols="80" required v-model="message" @keydown.space="splitMessage" @keyup.space="splitArray"></textarea>
           </div>
+          <ripple v-if="isValid" class="button is-green">Enviar</ripple>
         </template>
       </form>
     </div>
@@ -35,7 +36,8 @@
         hasSender: false,
         message: '',
         array: [],
-        writing: false
+        writing: false,
+        isValid: false
       }
     },
     metaInfo: {

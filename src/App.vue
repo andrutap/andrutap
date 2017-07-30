@@ -1,6 +1,6 @@
 <template>
   <main id="app">
-    <navbar></navbar>
+    <navbar v-if="!matched"></navbar>
     <transition>
       <keep-alive>
         <router-view></router-view>
@@ -16,6 +16,11 @@
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ]
+    },
+    computed: {
+      matched () {
+        return this.$route.path.indexOf('/home') === 0
+      }
     }
   }
 

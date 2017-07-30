@@ -21,7 +21,7 @@ $black-alpha-2: hsla(0, 100%, 100%, 0.225)
     outline: none
   @each $key, $color in $list
     &.#{$key}
-      background: rgba($color, $alpha)
+      background: $color
       border-color: $color
       font-weight: lighter
       color: white
