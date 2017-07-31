@@ -5,11 +5,11 @@
         <div class="group" v-if="!showForm">
           <legend class="text is-big">Para comenzar, ¿cuál es tu nombre?</legend>
           <input type="text" name="senderName" value="" v-model="sender" @input="checkHasSender" required>
-          <ripple class="button is-primary" v-if="hasSender" @click.native="nextQ">OK</ripple>
+          <ripple class="button is-clickable" v-if="hasSender" @click.native="nextQ">OK</ripple>
         </div>
         <template v-else>
           <div class="group" >
-            <legend class="text is-big">Hola, {{ sender }}</legend>
+            <legend class="text is-big">Hola, <span class="text is-underline">{{ sender }}</span></legend>
           </div>
           <div class="group">
             <label for="email">Por favor, ingresa tu email</label>

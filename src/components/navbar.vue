@@ -1,17 +1,15 @@
 <template>
   <div class="box">
     <nav class="navbar" :class="{ 'is-active': isToggled }">
-      <ripple class="is-revealer is-navbar-toggle elevation _none" @click.native="toggle"></ripple>
-      <span class="route is-active" v-if="!isToggled">{{ routeName }}</span>
-      <transition-group name="navbar-fade">
-        <template v-if="isToggled">
-          <div class="navbar-holder is-menu" :key="'div'">
-            <span class="item" v-for="link in links" :key="'link'">
-              <router-link :to="link.path">{{ link.name }}</router-link>
-            </span>
-          </div>
+      <ripple class="is-clickable is-navbar-toggle elevation _none" @click.native="toggle"></ripple>
+      <span class="route is-active no-select text is-bold" v-if="!isToggled">{{ routeName }}</span>
+      <template v-if="isToggled">
+        <div class="navbar-holder is-menu" :key="'div'">
+          <span class="item" v-for="link in links" :key="'link'">
+            <router-link :to="link.path">{{ link.name }}</router-link>
+          </span>
+        </div>
       </template>
-      </transition-group>
     </nav>
   </div>
 </template>
